@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to left, #198dd6, #34ddab );
+            font-family: Arial, sans-serif;
+        }
+        .box {
+            background-color: bisque;
+            color: black;
+            text-align: center;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        #count {
+            padding: 10px;
+            font-size: 100px;
+            margin: 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s;
+        }   
+        .add{
+            background-color: #00b37d;
+        }
+        .save{
+            background-color: #076abb;
+        }
+        .add:hover{
+            
+            scale: 1.1;
+        }
+        .save:hover{
+            scale: 1.1
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger Counter App</title>
+</head>
+<body>
+    <div class="box">
+        <div id="count">0</div>
+        <div class="buttons">
+            <button class="add" onclick="add()">Add</button>
+            <button class="save" onclick="save()">Save</button>
+        </div>
+        <div id="data"></div>
+    </div>
+    <script>
+        let count = 0;
+        function add(){
+            count += 1;
+            document.getElementById("count").innerHTML = count
+            
+        }
+        function save(){
+            document.getElementById("data").innerHTML += ` - ${count}`;
+            document.getElementById("count").innerHTML = 0;
+            count = 0;
+            
+        }
+
+    </script>
+</body>
+</html>
